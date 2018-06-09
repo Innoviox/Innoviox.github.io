@@ -2,7 +2,7 @@
   "name": "innoviox.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "innoviox.me",
+  "homepage": "http://innoviox.me",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "react": "^16.4.0",
