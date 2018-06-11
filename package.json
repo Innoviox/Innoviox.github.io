@@ -5,8 +5,10 @@
   "homepage": "http://innoviox.me",
   "dependencies": {
     "gh-pages": "^1.2.0",
+    "odometer": "^0.4.8",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
+    "react-bootstrap-carousel": "^3.0.3",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },

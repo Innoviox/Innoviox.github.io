@@ -42,9 +42,8 @@ class TopBar extends Component {
                                 <img className = "logo animated infinite tada" src={logo} alt="Axiom"></img>
 
                                 <ButtonGroup>
-                                    <Button bsStyle="danger" className="navbtn" bsSize="large">GitHub</Button>
                                     <DropdownButton bsStyle="danger" bsSize="large" title="primary" key="0" className={"navbtn " + dropDownClass[0]} noCaret onClick={this.handleHover} onMouseLeave={this.handleHover} id = "bg-nested-dropdwn">
-                                      <MenuItem eventKey="1" href="https://github.com/Innoviox/Axiom">GitHub</MenuItem>
+                                      <MenuItem eventKey="1" href="https://github.com/Innoviox/">GitHub</MenuItem>
                                       <MenuItem eventKey="2">Another action</MenuItem>
                                       <MenuItem eventKey="3" active>Active Item</MenuItem>
                                       <MenuItem divider />
@@ -67,7 +66,7 @@ class TopBar extends Component {
 }
 
 
-const app = () =>
+const App = () =>
       <div className="App">
         <TopBar />
         <p className="App-intro">
