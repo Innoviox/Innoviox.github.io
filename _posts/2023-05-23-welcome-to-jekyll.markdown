@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Scrolling is Hard: A Journey into the UIScrollView
+title:  "Scrolling is Hard: A Journey into the UIScrollView"
 date:   2023-05-23 15:40:05 +0200
 categories: jekyll update
 ---
