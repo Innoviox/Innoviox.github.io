@@ -35,7 +35,7 @@ The first method will load in the html string, the second method will be called 
 
 However, there was one thing that I tried that did in fact work. When I set animated to true while scrolling, it scrolled gloriously, while exposing my vertical secret. But animated = false just did nothing!
 
-Why would they do this to me? Why add a animated = false just to have it not work? If you set a scroll notifier for what content offsets are actually happening here you get:
+Why would they do this to me? Why add the ability to set `animated = false` just to have it not work? If you set a scroll notifier for what content offsets are actually happening here you get:
 
 ```
 didScroll (0.0, 100.0) <-- the actual scroll (in this example height is 100 and pageNumber is 1)
@@ -51,11 +51,18 @@ Why?
 
 ## Part 3: Four years of toiling; chatgpt lies to me
 
-It took me roughly four years of not working on this project anymore to fix this issue. I eventually decided, while studying abroad, to focus on it rather than complete the homework for my classes. (For a review of the German school system, see [here].) 
+It took me roughly four years of not working on this project anymore to fix this issue. I eventually decided, while studying abroad, to focus on it rather than complete the homework for my classes. (For a review of the German school system, see [here](innoviox.github.io).) 
 
-There are a few ways to go about solving this issue. You can handle the scrolling that the `scrollViewDidScroll` and cancel it if it's not the scroll that you want to have happened; the issue is that by this point the scrolling has already happened, so there's a slight flickering as the page bounces around. Most of the scrollView delegate methods are unsurprisingly for handling animated scrolling, which again we do not (as this scrolling is secret and unanimated).  We must go deeper.
+There are a few ways to go about solving this issue. You can handle the scrolling that the `scrollViewDidScroll` and cancel it if it's not the scroll that you want to have happened; the issue is that by this point the scrolling has already happened, so there's a slight flickering as the page bounces around. Most of the scrollView delegate methods are unsurprisingly for handling animated scrolling, which again we do not (as this scrolling is secret and unanimated). I asked ChatGPT for help several times on this question at the advice of various friends. It did not go super well. It mostly led me back and forth between different delegate methods without changing anything, as well as making up a plist attribute that doesn't exist. 
+
+![Screen Shot 2023-10-05 at 1.25.32 AM](/Users/simonchervenak/Documents/screenshots/Screen Shot 2023-10-05 at 1.25.32 AM.png)
+
+We must go deeper.
 
 Into the realm of Javascript.
 
-Since the html displayer is a `WKWebView`, we can take advantage of the `webView.evaluateJavaScript` method to use arbitrary javascript code. 
+Since the html displayer is a `WKWebView`, we can take advantage of the `webView.evaluateJavaScript` method to use arbitrary javascript code. I wrote a method (which literally came to me in a dream) to measure the height of each paragraph and element on the page, and then cut off the page by adding whitespace before elements that would cross page boundaries. As I don't want to burn your eyes with swift-embedded javascript string literals, I will not post it here. 
 
+So that is the story of why, avid Saga reader from the distant future, sometimes the text on pages is different heights -- there's secretly a white rectangle stopping a naughty paragraph from exposing my vertical scrolling. (And why, if you went and built Saga right now, sometimes there is a gray rectangle on the bottom of pages. I'm sure that'll be fixed soon.) 
+
+Hopefully this blog will soon be filled with similar adventures! Stay tuned. 
