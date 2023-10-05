@@ -55,7 +55,7 @@ It took me roughly four years of not working on this project anymore to fix this
 
 There are a few ways to go about solving this issue. You can handle the scrolling that the `scrollViewDidScroll` and cancel it if it's not the scroll that you want to have happened; the issue is that by this point the scrolling has already happened, so there's a slight flickering as the page bounces around. Most of the scrollView delegate methods are unsurprisingly for handling animated scrolling, which again we do not (as this scrolling is secret and unanimated). I asked ChatGPT for help several times on this question at the advice of various friends. It did not go super well. It mostly led me back and forth between different delegate methods without changing anything, as well as making up a plist attribute that doesn't exist. 
 
-![Screen Shot 2023-10-05 at 1.25.32 AM](https://innoviox.github.io/s1.png)
+![Screen Shot 2023-10-05 at 1.25.32 AM](https://innoviox.github.io/img/s1.png)
 
 We must go deeper.
 
