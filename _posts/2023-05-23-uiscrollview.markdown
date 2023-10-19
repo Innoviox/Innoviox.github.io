@@ -66,3 +66,4 @@ Since the html displayer is a `WKWebView`, we can take advantage of the `webView
 So that is the story of why, avid Saga reader from the distant future, sometimes the text on pages is different heights -- there's secretly a white rectangle stopping a naughty paragraph from exposing my vertical scrolling. (And why, if you went and built Saga right now, sometimes there is a gray rectangle on the bottom of pages. I'm sure that'll be fixed soon.) 
 
 Hopefully this blog will soon be filled with similar adventures! Stay tuned. 
+
