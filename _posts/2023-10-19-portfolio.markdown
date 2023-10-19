@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Portfolio Update: Is Eurail Cheaper?"
-date:   2023-10-19 12:31:06 -0500
+date:   2023-10-19 12:31:06 +0000
 categories: jekyll update
 ---
 
