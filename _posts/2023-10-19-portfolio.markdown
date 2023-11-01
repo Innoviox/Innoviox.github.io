@@ -7,4 +7,4 @@ categories: jekyll update
 
 ## Eurail Price Comparer
 
-I've deployed my first app built with Next.js to Vercel: https://is-eurail-cheaper.vercel.app/. It's a price checker to compare the cost of trips in Europe across trains with and without the eurail pass, with Flixbus and Ryanair soon to come.
+I've deployed my first app built with Next.js to Vercel: [https://is-eurail-cheaper.vercel.app/](https://is-eurail-cheaper.vercel.app/). It's a price checker to compare the cost of trips in Europe across trains with and without the eurail pass, with Flixbus and Ryanair soon to come.
