@@ -1,11 +1,51 @@
 ---
 layout: default
 ---
+<style>
+    .images-holder {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .image-holder {
+        position: relative;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+
+        background-color: white;
+
+        /* position: absolute; */
+    }
+
+    .image-name {
+        position: absolute;
+        background-color: white;
+        font-size: 20px;
+    }
+</style>
 
 <div class="home">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
+
+    <div class="images-holder">
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/iec.png"></img>
+            <span class="image-name">Is Eurail Cheaper?</span>
+        </div>
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/quizdb.png"></img>
+            <span class="image-name">QuizDB</span>
+        </div>
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/gaddag.png"></img>
+            <span class="image-name">Gaddag</span>
+        </div>
+    </div>
 
     {{ content }}
 
