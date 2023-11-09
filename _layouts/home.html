@@ -13,6 +13,30 @@ layout: default
         position: relative;
         width: 200px;
         height: 200px;
+        overflow: hidden;
+    }
+
+    .image-holder-outer {
+        display: inline-block;
+    }
+
+    .image-holder-outer::after {
+        content: "";
+        box-shadow: 0px 0px 10px 0px rgb(19, 19, 19);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        position: relative;
+        z-index: -1;
+        top: -100%;
+        /* left: 50%; */
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-holder-outer:hover::after {
+        opacity: 1;
+        /* box-shadow: 0px 0px 5px 0px rgb(19, 19, 19); */
     }
 
     .image {
@@ -31,11 +55,21 @@ layout: default
         background-color: #6a6e75;
         color: white;
         font-size: 20px;
-        top: 40%;
+        top: 25%;
         border-radius: 10%;
         padding: 0 2px 0 2px;
         white-space: nowrap;
 
+    }
+
+    .image-holder .image {
+        transition: all 0.3s ease;
+
+        vertical-align: middle;
+    }
+
+    .image-holder .image:hover {
+        transform: scale(1.2);
     }
 
     #name1 {
@@ -49,6 +83,10 @@ layout: default
     #name3 {
         left: 15%;
     }
+
+    .image-holder-inner {
+        overflow: hidden;
+    }
 </style>
 
 <div class="home">
@@ -57,18 +95,30 @@ layout: default
     <!-- {%- endif -%} -->
     <h1 class="page-heading">Portfolio</h1>
     <div class="images-holder">
-        <div class="image-holder">
-            <img class="image" src="http://127.0.0.1:4000/img/iec.png"></img>
-            <span class="image-name" id="name1">Is Eurail Cheaper?</span>
-        </div>
-        <div class="image-holder">
-            <img class="image" src="http://127.0.0.1:4000/img/quizdb.png"></img>
-            <span class="image-name" id="name2">QuizDB</span>
-        </div>
-        <div class="image-holder">
-            <img class="image" src="http://127.0.0.1:4000/img/gaddag.png"></img>
-            <span class="image-name" id="name3">Scrabble Analyzer</span>
-        </div>
+        <a class="image-holder-outer" href="https://is-eurail-cheaper-git-main-innoviox.vercel.app/" target="_blank">
+            <div class="image-holder">
+                <div class="image-holder-inner">
+                    <img class="image" src="https://innoviox.github.io/img/iec.png"></img>
+                </div>
+                <span class="image-name" id="name1">Is Eurail Cheaper?</span>
+            </div>
+        </a>
+        <a class="image-holder-outer" href="https://quizdbmobile.technaplex.com/" target="_blank">
+            <div class="image-holder">
+                <div class="image-holder-inner">
+                    <img class="image" src="https://innoviox.github.io/img/quizdb.png"></img>
+                </div>
+                <span class="image-name" id="name2">QuizDB</span>
+            </div>
+        </a>
+        <a class="image-holder-outer" href="https://github.com/innoviox/gaddag-rust" target="_blank">
+            <div class="image-holder">
+                <div class="image-holder-inner">
+                    <img class="image" src="https://innoviox.github.io/img/gaddag.png"></img>
+                </div>
+                <span class="image-name" id="name3">Scrabble Analyzer</span>
+            </div>
+        </a>
     </div>
 
     {{ content }}
