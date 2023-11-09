@@ -1,11 +1,75 @@
 ---
 layout: default
 ---
+<style>
+    .images-holder {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .image-holder {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+
+        background-color: white;
+
+        position: absolute;
+
+        border-radius: 10%;
+    }
+
+    .image-name {
+        position: absolute;
+        background-color: #6a6e75;
+        color: white;
+        font-size: 20px;
+        top: 40%;
+        border-radius: 10%;
+        padding: 0 2px 0 2px;
+        white-space: nowrap;
+
+    }
+
+    #name1 {
+        left: 15%;
+    }
+
+    #name2 {
+        left: 35%;
+    }
+
+    #name3 {
+        left: 15%;
+    }
+</style>
 
 <div class="home">
-    {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%}
+    <!-- {%- if page.title -%} -->
+    <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
+    <!-- {%- endif -%} -->
+    <h1 class="page-heading">Portfolio</h1>
+    <div class="images-holder">
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/iec.png"></img>
+            <span class="image-name" id="name1">Is Eurail Cheaper?</span>
+        </div>
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/quizdb.png"></img>
+            <span class="image-name" id="name2">QuizDB</span>
+        </div>
+        <div class="image-holder">
+            <img class="image" src="http://127.0.0.1:4000/img/gaddag.png"></img>
+            <span class="image-name" id="name3">Scrabble Analyzer</span>
+        </div>
+    </div>
 
     {{ content }}
 
