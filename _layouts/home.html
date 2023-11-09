@@ -9,6 +9,8 @@ layout: default
 
     .image-holder {
         position: relative;
+        width: 200px;
+        height: 200px;
     }
 
     .image {
@@ -17,13 +19,17 @@ layout: default
 
         background-color: white;
 
-        /* position: absolute; */
+        position: absolute;
+
+        border-radius: 10%;
     }
 
     .image-name {
         position: absolute;
         background-color: white;
         font-size: 20px;
+        top: 40%;
+        left: 20%;
     }
 </style>
 
@@ -43,7 +49,7 @@ layout: default
         </div>
         <div class="image-holder">
             <img class="image" src="http://127.0.0.1:4000/img/gaddag.png"></img>
-            <span class="image-name">Gaddag</span>
+            <span class="image-name">Scrabble Analyzer</span>
         </div>
     </div>
 
