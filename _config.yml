@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Innoviox (Simon Chervenak)'s blog
+title: Simon Chervenak's Blog
 email: simonlcherv@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I'm Simon Chervenak, a computer science and linguistics major at the University of Maryland. Currently building https://is-eurail-cheaper.vercel.app/. 
