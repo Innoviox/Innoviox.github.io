@@ -17,7 +17,9 @@ layout: default
     }
 
     .image-holder-outer {
-        display: inline-block;
+        /* display: inline-block; */
+        /* float: left; */
+        /* width: 33%; */
     }
 
     .image-holder-outer::after {
@@ -91,6 +93,20 @@ layout: default
     .image-holder-inner {
         overflow: hidden;
     }
+
+    .image-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        flex-basis: 33%;
+    }
+
+    .caption {
+        /* float: left; */
+        font-size: 12px;
+        padding-bottom: 10px;
+    }
 </style>
 
 <div class="home">
@@ -99,41 +115,62 @@ layout: default
     <!-- {%- endif -%} -->
     <h1 class="page-heading">Portfolio</h1>
     <div class="images-holder">
-        <a class="image-holder-outer" href="https://is-eurail-cheaper-git-main-innoviox.vercel.app/" target="_blank">
-            <div class="image-holder">
-                <div class="image-holder-inner">
-                    <img class="image" src="https://innoviox.github.io/img/iec.png"></img>
+        <div class="image-outer">
+            <a class="image-holder-outer" href="https://is-eurail-cheaper-git-main-innoviox.vercel.app/"
+                target="_blank">
+                <div class="image-holder">
+                    <div class="image-holder-inner">
+                        <img class="image" src="https://innoviox.github.io/img/iec.png"></img>
+                    </div>
+                    <span class="image-name" id="name1">Is Eurail Cheaper?</span>
                 </div>
-                <span class="image-name" id="name1">Is Eurail Cheaper?</span>
-            </div>
-        </a>
-        <a class="image-holder-outer" href="https://quizdbmobile.technaplex.com/" target="_blank">
-            <div class="image-holder">
-                <div class="image-holder-inner">
-                    <img class="image" src="https://innoviox.github.io/img/quizdb.png"></img>
+            </a>
+            <span class="caption">
+                React.js app to compare train prices.
+            </span>
+        </div>
+        <div class="image-outer">
+            <a class="image-holder-outer" href="https://quizdbmobile.technaplex.com/" target="_blank">
+                <div class="image-holder">
+                    <div class="image-holder-inner">
+                        <img class="image" src="https://innoviox.github.io/img/quizdb.png"></img>
+                    </div>
+                    <span class="image-name" id="name2">QuizDB</span>
                 </div>
-                <span class="image-name" id="name2">QuizDB</span>
-            </div>
-        </a>
-        <a class="image-holder-outer" href="https://github.com/innoviox/gaddag-rust" target="_blank">
-            <div class="image-holder">
-                <div class="image-holder-inner">
-                    <img class="image" src="https://innoviox.github.io/img/gaddag.png"></img>
+            </a>
+            <span class="caption">
+                Swift app to test your trivia skills.
+            </span>
+        </div>
+        <div class="image-outer">
+            <a class="image-holder-outer" href="https://github.com/innoviox/gaddag-rust" target="_blank">
+                <div class="image-holder">
+                    <div class="image-holder-inner">
+                        <img class="image" src="https://innoviox.github.io/img/gaddag.png"></img>
+                    </div>
+                    <span class="image-name" id="name3">Scrabble AI</span>
                 </div>
-                <span class="image-name" id="name3">Scrabble AI</span>
-            </div>
-        </a>
+            </a>
+            <span class="caption">
+                Rust library to play Scrabble.
+            </span>
+        </div>
     </div>
-    <br>
+    <!-- <br> -->
     <div class="images-holder">
-        <a class="image-holder-outer" href="https://innoviox.github.io/mtg-analyzer/" target="_blank">
-            <div class="image-holder">
-                <div class="image-holder-inner">
-                    <img class="image" src="https://innoviox.github.io/img/mtganl.png"></img>
+        <div class="image-outer">
+            <a class="image-holder-outer" href="https://innoviox.github.io/mtg-analyzer/" target="_blank">
+                <div class="image-holder">
+                    <div class="image-holder-inner">
+                        <img class="image" src="https://innoviox.github.io/img/mtganl.png"></img>
+                    </div>
+                    <span class="image-name" id="name4">MTG Analyzer</span>
                 </div>
-                <span class="image-name" id="name4">MTG Analyzer</span>
-            </div>
-        </a>
+            </a>
+            <span class="caption">
+                Pandas notebook analyzing MTG cards.
+            </span>
+        </div>
     </div>
 
     {{ content }}
