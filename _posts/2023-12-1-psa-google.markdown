@@ -11,15 +11,11 @@ This week's project is *moev*, a Swift app born of my desire while visiting New 
 
 All of this is to say that I was parsing through the Google Routes API (which is different than the Google Directions API for...reasons) which returns the route's line as an "Encoded Polyline" string that looks like this:
 
-```polyline
-_p~iF~ps|U_ulLnnqC_mqNvxq`@
-```
+<pre>_p~iF~ps|U_ulLnnqC_mqNvxq`@</pre>
 
 If we break it down into the things that are each encoding a latitude-longitude pair, we get this:
 
-```
-(_p~iF, ~ps|U), (_ulL, nnqC), (_mqN, vxq`@)
-```
+<pre>(_p~iF, ~ps|U), (_ulL, nnqC), (_mqN, vxq`@)</pre>
 
 Firstly, the way this works and how they ensure that this data is encoded into ASCII-displayable characters is quite cool. Read about it [here](https://developers.google.com/maps/documentation/utilities/polylinealgorithm). But do you see a slight problem with this?
 
@@ -27,11 +23,23 @@ How do we know how long each coordinate measurement is? Seemingly, some are 5 ch
 
 > Check the least significant bit of each byte group; if this bit is set to 1, the point is not yet fully formed and additional data must follow.
 
-What is a byte group? What they actually mean is:
+What is a byte group? Let's take a closer look.
+
+If we expand the earlier points into their ASCII codes, we get:
+
+<pre>95 112 126 105 70 126 112 115 124 85 95 117 108 76 110 110 113 67 95 109 113 78 118 120 113 96 64</pre>
+
+Splitting them by the point boundaries we know (from the example in the docs), we get:
+
+<pre>
+(95 112 126 105 <b>70</b>, 126 112 115 124 <b>85</b>), (95 117 108 <b>76</b>, 110 110 113 <b>67</b>), (95 109 113 <b>78</b>, 118 120 113 96 <b>64</b>)
+</pre>
+
+I've bolded all the numbers less than 95, and they're all at the ends! So what they actually mean is:
 
 > Check each letter received. If its ASCII value is greater than 94, the point is not yet fully formed and additional data must follow.
 
-And how do you check if a value is greater than 94? Note that if $n > 94$, then $n - 63 > 31$. Therefore, we can check if its early bits are 1s -- otherwise known as the most significant bits!
+And how do you check if a value is greater than 94? Note that if $$n > 94$$, then $$n - 63 > 31$$. Therefore, we can check if its early bits are 1s -- otherwise known as the most significant bits!
 
 So, by "the least significant bit of each byte group" Google means "the most significant bit of each byte"!
 
