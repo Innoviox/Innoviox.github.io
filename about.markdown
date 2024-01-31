@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-WIP
+See my [resume]({{ site.url }}/img/Simon Chervenak Resume.pdf) for more information.
